@@ -1,0 +1,284 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+}
+
+h1, h2 {
+    font-family: 'GrandSlang-Roman', cursive;
+}
+
+img {
+    object-fit: cover;
+}
+
+#layout {
+    max-width: 1440px;
+    width: 100%;
+    margin: auto;
+}
+
+#layout {
+    display: flex;
+    margin-top: 2%;
+}
+
+.nav {
+    background-color: #c6dcba;
+    position: fixed;
+    width: 250px;
+    height: 100%;
+    z-index: 1;
+    overflow-x: hidden;
+    padding-top: 20px;
+    padding-top: 5%;
+    border: 2px solid #000000;
+    margin: auto;
+    border-radius: 50px 0px 0px 0px;
+}
+
+.button a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 15px;
+    color: #6c1c09;
+    background-color: white;
+    border-radius: 10px;
+    display: block;
+    border-width: 2px;
+    border-style: solid;
+    border-color: #6c1c09 ;
+    box-shadow: 0px 7px 0px 0px rgba(108, 28, 9, 0.65);
+    margin: 7%;
+    text-align: center;
+}
+
+.main {
+    margin-left: 250px;
+}
+
+.contact {
+    background-color: white;
+    margin: 7%;
+    padding: 7%;
+    border-width: 2px;
+    border-style: solid;
+    border-color: #6c1c09;
+    box-shadow: 7px 7px  rgba(108, 28, 9, 0.65);
+    color: #6c1c09 ;
+    margin-top: 20%;
+}
+
+.contact a {
+    color: #6c1c09;
+}
+
+.contact p {
+}
+
+#aboutme {
+    display: flex;
+    padding: 5%;
+    background: linear-gradient(to left bottom, #d7e4c0 50%, #c6dcba 50%);
+    border-top: 2px solid #000000;
+    border-right: 2px solid #000000;
+    border-radius: 0px 50px 50px 0px;
+    position: relative;
+}
+
+#aboutme::after {
+    z-index: 1;
+    position: absolute;
+    right: -2px;
+    bottom: 0px;
+    width: calc(50% + 1px);
+    height: 84px;
+    border-right: 2px solid #000;
+    border-bottom: 2px solid #000;
+    border-radius: 0 0 50px 0;
+    content: "";
+}
+
+#aboutme img {
+
+}
+.abouttext {
+
+}
+
+#works {
+    position: relative;
+    padding: 40px 0 100px;
+    border-left: 1px solid var(--color_border);
+    background-color: #ffffff;
+    width: 100%;
+    padding: 5%;
+}
+
+#works::before {
+    z-index: 1;
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    width: 50%;
+    height: 84px;
+    border-top: 2px solid #000;
+    border-left: 2px solid #000;
+    border-radius: 50px 0 0 0;
+    content: "";
+}
+
+.workscon::before {
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: -1px;
+    width: 100%;
+    height: 100%;
+    background: #c6dcba;
+    content: "";
+}
+
+.row {
+    margin: 8px -16px;
+}
+
+/* Add padding BETWEEN each column (if you want) */
+.row,
+.row>.column {
+    padding: 8px;
+}
+
+/* Create three equal columns that floats next to each other */
+.column {
+    float: left;
+    width: 33.33%;
+    display: none;
+    /* Hide columns by default */
+}
+
+/* Clear floats after rows */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Content */
+.content {
+    background-color: white;
+    padding: 10px;
+}
+
+/* The "show" class is added to the filtered elements */
+.show {
+    display: block;
+}
+
+/* Style the buttons */
+.btn {
+    border: none;
+    outline: none;
+    padding: 12px 16px;
+    background-color: white;
+    cursor: pointer;
+}
+
+/* Add a grey background color on mouse-over */
+.btn:hover {
+    background-color: #ddd;
+}
+
+/* Add a dark background color to the active button */
+.btn.active {
+    background-color: #666;
+    color: white;
+}
+
+/* This is popup */
+.overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.212);
+    transition: opacity 500ms;
+    visibility: hidden;
+    opacity: 0;
+    z-index: 100;
+}
+
+.overlay:target {
+    visibility: visible;
+    opacity: 1;
+}
+
+.popup {
+    margin: auto;
+    background: #fff;
+    border-radius: 20px;
+    width: 15%;
+    height: 30%;
+    transition: all 1s ease-in-out;
+    z-index: 200;
+}
+
+.popup img {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    border-radius: 20px;
+    padding: 10px;
+    width: 100%;
+    height: 100%;
+}
+
+.popup,
+.close {
+    position: relative;
+    top: 35%;
+    transition: all 300ms;
+    font-size: 50px;
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.close {
+    position: absolute;
+    top: 0px;
+    right: 20px;
+    z-index: 100;
+}
+
+.popup,
+.close:hover {
+    color: #df1c1c;
+}
+
+.popup,
+.container {
+    overflow: auto;
+    max-width: 990px;
+    width: 100%;
+}
+
+.container img {
+    object-fit: cover;
+    max-width: 100%;
+    min-height: 100%;
+    border-radius: 15px;
+}
+
+#services {
+    background-color: #d7e4c0;
+    padding: 5%;
+    border-radius: 0px 50px 0px 50px;
+    border-right: 2px solid #000000;
+    border-bottom: 2px solid #000000;
+}

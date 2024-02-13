@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <script src="https://c.webfontfree.com/c.js?f=GrandSlang-Roman" type="text/javascript"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="layout">
+        <div class="nav">
+            <div class="button">
+                <a href="#aboutme"><h1>About Me</h1></a>
+                <a href="#works"><h1>Works</h1></a>
+                <a href="#services"><h1>Services</h1></a>
+                </ul>
+            </div>
+            <div class="contact">
+                <h2>Contact</h2><br>
+                <p>Tel : 0812-8531-3725
+                    <br><br>
+                    Email :
+                    valentia.gravelia@
+                    <br>gmail.com
+                    <br><br>
+                    <a href="">Instagram</a> / <a href="">Line</a> /
+                    <a href="">Linkedin</a>
+                </p>
+            </div>
+        </div>
+        <div class="main">
+            <div id="aboutme">
+                <div class="abouttext">
+                    <h1>About Me</h1>
+                    <h2>Hi, I’m Valentia Gravelia
+                        <br>Welcome to my portfolio!
+                    </h2>
+                    <p>I am currently a third-year student pursuing a major
+                        in Japanese Literature at Binus University.
+                        Experienced in diverse set of fields spanning from
+                        graphic design, web development, video editing,
+                        content writing, and translation. Driven by a resolute
+                        commitment to excellence, a dedicated focus, and
+                        readiness to embrace new challenges, I am actively
+                        exploring prospects across different fields of interest,
+                        with the goal of effectively channeling my skills and
+                        passions into professional avenues.</p>
+                </div>
+                <img src="img/myphoto.jpg" alt="">
+            </div>
+            <div id="works">
+                <div class="workscon">
+                    <h1>Works</h1>
+                    <div id="myBtnContainer">
+                        <button class="btn active" onclick="filterSelection('all')"> Show all</button>
+                        <button class="btn" onclick="filterSelection('graphic')"> Graphic Design</button>
+                        <button class="btn" onclick="filterSelection('website')"> Website</button>
+                        <button class="btn" onclick="filterSelection('video')"> Video</button>
+                    </div>
+                    <div class="row">
+                        <div class="column graphic">
+                            <div class="content">
+                                <a href="#pop1"><img src="img/2b(revised).jpg" style="width:100%"></a>
+                            </div>
+                            <div class="content">
+                                <a href="#pop2"><img src="img/1b.jpg" style="width:100%"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- This is popup -->
+                    <div id="pop1" class="overlay">
+                        <div class="popup">
+                            <div class="container">
+                                <img src="img/2b(revised).jpg">
+                            </div>
+                            <a class="close" href="#works">x</a>
+                        </div>
+                    </div>
+                    <div id="pop2" class="overlay">
+                        <div class="popup">
+                            <div class="container">
+                                <img src="img/1b.jpg">
+                            </div>
+                            <a class="close" href="#secondmenu">x</a>
+                        </div>
+                    </div>
+                    <div id="popup3" class="overlay">
+                        <div class="popup">
+                            <div class="container">
+                                <img src="img/popup3.jpg">
+                            </div>
+                            <a class="close" href="#thirdmenu">x</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="services">
+                <h1>Services</h1>
+            </div>
+        </div>
+    </div>
+    <script>
+        filterSelection("all")
+        function filterSelection(c) {
+            var x, i;
+            x = document.getElementsByClassName("column");
+            if (c == "all") c = "";
+            for (i = 0; i < x.length; i++) {
+                w3RemoveClass(x[i], "show");
+                if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+            }
+        }
+
+        function w3AddClass(element, name) {
+            var i, arr1, arr2;
+            arr1 = element.className.split(" ");
+            arr2 = name.split(" ");
+            for (i = 0; i < arr2.length; i++) {
+                if (arr1.indexOf(arr2[i]) == -1) { element.className += " " + arr2[i]; }
+            }
+        }
+
+        function w3RemoveClass(element, name) {
+            var i, arr1, arr2;
+            arr1 = element.className.split(" ");
+            arr2 = name.split(" ");
+            for (i = 0; i < arr2.length; i++) {
+                while (arr1.indexOf(arr2[i]) > -1) {
+                    arr1.splice(arr1.indexOf(arr2[i]), 1);
+                }
+            }
+            element.className = arr1.join(" ");
+        }
+
+
+        // Add active class to the current button (highlight it)
+        var btnContainer = document.getElementById("myBtnContainer");
+        var btns = btnContainer.getElementsByClassName("btn");
+        for (var i = 0; i < btns.length; i++) {
+            btns[i].addEventListener("click", function () {
+                var current = document.getElementsByClassName("active");
+                current[0].className = current[0].className.replace(" active", "");
+                this.className += " active";
+            });
+        }
+    </script>
+</body>
+</html>
